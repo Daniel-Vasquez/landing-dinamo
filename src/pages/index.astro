@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation';
-import Hero from '../components/Hero.astro';
+import HeroCanvas from '../components/HeroCanvas';
 import TrackTiles from '../components/TrackTiles.astro';
 import HelmetCarousel from '../components/HelmetCarousel';
 import Partnerships from '../components/Partnerships.astro';
@@ -88,7 +88,7 @@ const socialPosts = [
   />
 
   <main>
-    <Hero nextRace="Canadian GP" raceDate="Jun 13–15" />
+    <HeroCanvas client:load nextRace="Canadian GP" raceDate="Jun 13–15" />
 
     <TrackTiles tiles={trackTiles} />
 
