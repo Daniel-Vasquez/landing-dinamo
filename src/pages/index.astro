@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation';
+import Hero from '../components/Hero.astro';
+import TrackTiles from '../components/TrackTiles.astro';
+import HelmetCarousel from '../components/HelmetCarousel';
+import Partnerships from '../components/Partnerships.astro';
+import StoreSection from '../components/StoreSection.astro';
+import SocialFeed from '../components/SocialFeed.astro';
+import Footer from '../components/Footer.astro';
+
+const navLinks = [
+  { label: 'On Track', href: '#on-track' },
+  { label: 'Off Track', href: '#off-track' },
+  { label: 'Partnerships', href: '#partnerships' },
+  { label: 'Social', href: '#social' },
+  { label: 'Store', href: 'https://store.landonorris.com', external: true },
+];
+
+const socialLinks = [
+  { name: 'Instagram', href: 'https://www.instagram.com/landonorris' },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@landonorris' },
+  { name: 'YouTube', href: 'https://www.youtube.com/landonorris' },
+  { name: 'X', href: 'https://twitter.com/landonorris' },
+  { name: 'Twitch', href: 'https://www.twitch.tv/landonorris' },
+];
+
+const trackTiles = [
+  {
+    id: 'on-track',
+    title: 'On Track',
+    subtitle: 'Performance & Racing',
+    image: '/images/on-track.jpg',
+    href: '#on-track',
+  },
+  {
+    id: 'off-track',
+    title: 'Off Track',
+    subtitle: 'Lifestyle & Content',
+    image: '/images/off-track.jpg',
+    href: '#off-track',
+  },
+];
+
+const helmets = [
+  { year: 2025, name: 'Season Opener', image: '/images/helmet-2025.jpg', color: '#ff6600' },
+  { year: 2024, name: 'Discoball', image: '/images/helmet-2024.jpg', color: '#c0c0c0' },
+  { year: 2023, name: 'Papaya Flash', image: '/images/helmet-2023.jpg', color: '#ff8700' },
+  { year: 2022, name: 'Neon Chrome', image: '/images/helmet-2022.jpg', color: '#00ffcc' },
+  { year: 2021, name: 'Cyberpunk', image: '/images/helmet-2021.jpg', color: '#b5f900' },
+  { year: 2020, name: 'Carbon Series', image: '/images/helmet-2020.jpg', color: '#333333' },
+  { year: 2019, name: 'Rookie Edition', image: '/images/helmet-2019.jpg', color: '#ff3333' },
+];
+
+const partners = [
+  { name: 'McLaren' },
+  { name: 'Ralph Lauren' },
+  { name: 'PlayStation' },
+  { name: 'Google' },
+  { name: 'Monster Energy' },
+  { name: 'Bell Helmets' },
+  { name: 'Quadrant' },
+  { name: 'Oakley' },
+  { name: 'eBay' },
+  { name: 'Hilton' },
+];
+
+const socialPosts = [
+  { platform: 'instagram' as const, image: '/images/social-1.jpg', href: 'https://www.instagram.com/landonorris', alt: 'Lando Norris on Instagram' },
+  { platform: 'tiktok' as const, image: '/images/social-2.jpg', href: 'https://www.tiktok.com/@landonorris', alt: 'Lando Norris on TikTok' },
+  { platform: 'youtube' as const, image: '/images/social-3.jpg', href: 'https://www.youtube.com/landonorris', alt: 'Lando Norris on YouTube' },
+  { platform: 'instagram' as const, image: '/images/social-4.jpg', href: 'https://www.instagram.com/landonorris', alt: 'Lando Norris on Instagram' },
+  { platform: 'x' as const, image: '/images/social-5.jpg', href: 'https://twitter.com/landonorris', alt: 'Lando Norris on X' },
+  { platform: 'instagram' as const, image: '/images/social-6.jpg', href: 'https://www.instagram.com/landonorris', alt: 'Lando Norris on Instagram' },
+  { platform: 'tiktok' as const, image: '/images/social-7.jpg', href: 'https://www.tiktok.com/@landonorris', alt: 'Lando Norris on TikTok' },
+  { platform: 'youtube' as const, image: '/images/social-8.jpg', href: 'https://www.youtube.com/landonorris', alt: 'Lando Norris on YouTube' },
+];
+---
+
+<Layout
+  title="Lando Norris | Official Website"
+  description="Official website of Lando Norris – 2025 McLaren Formula 1 Driver. Racing news, partnerships, and more."
+>
+  <Navigation
+    client:load
+    links={navLinks}
+    socialLinks={socialLinks}
+  />
+
+  <main>
+    <Hero nextRace="Canadian GP" raceDate="Jun 13–15" />
+
+    <TrackTiles tiles={trackTiles} />
+
+    <HelmetCarousel client:visible helmets={helmets} />
+
+    <Partnerships partners={partners} />
+
+    <StoreSection storeUrl="https://store.landonorris.com" />
+
+    <SocialFeed posts={socialPosts} />
+  </main>
+
+  <Footer navLinks={navLinks} />
+</Layout>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <rect width="500" height="500" fill="#111"/>
+  <ellipse cx="250" cy="260" rx="170" ry="150" fill="#cc3333" opacity="0.7"/>
+  <ellipse cx="250" cy="200" rx="140" ry="120" fill="#cc3333" opacity="0.9"/>
+  <ellipse cx="250" cy="190" rx="120" ry="100" fill="#cc3333"/>
+  <rect x="130" y="240" width="240" height="60" rx="30" fill="rgba(0,0,0,0.4)"/>
+  <rect x="150" y="250" width="200" height="40" rx="20" fill="rgba(255,255,255,0.15)"/>
+  <text x="250" y="160" text-anchor="middle" font-family="Arial Black" font-size="60" fill="#000" opacity="0.3" font-weight="900">2019</text>
+  <text x="250" y="460" text-anchor="middle" font-family="Arial" font-size="14" fill="#888">Rookie Edition</text>
+</svg>

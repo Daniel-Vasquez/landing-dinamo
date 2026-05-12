@@ -1,0 +1,47 @@
+---
+interface Partner {
+  name: string;
+  logo?: string;
+  category?: string;
+}
+
+interface Props {
+  partners: Partner[];
+}
+
+const { partners } = Astro.props;
+---
+
+<section id="partnerships" class="bg-[#0d0d0d] py-20 md:py-28">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <!-- Header -->
+    <div class="mb-14 md:mb-20">
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand-lime mb-3">Sponsors</p>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-none">
+        Partnerships
+      </h2>
+    </div>
+
+    <!-- Partners grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-px bg-white/5">
+      {
+        partners.map((partner) => (
+          <div class="group bg-[#0d0d0d] p-8 md:p-10 flex items-center justify-center aspect-[3/2] hover:bg-white/5 transition-colors duration-300">
+            {partner.logo ? (
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                class="max-h-10 max-w-full object-contain filter brightness-0 invert opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                loading="lazy"
+              />
+            ) : (
+              <span class="text-white/30 group-hover:text-white/70 text-sm font-bold uppercase tracking-wider text-center transition-colors duration-300">
+                {partner.name}
+              </span>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

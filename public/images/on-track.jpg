@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="700" fill="url(#bg)"/>
+  <circle cx="450" cy="350" r="250" fill="#ff6600" opacity="0.08"/>
+  <circle cx="450" cy="350" r="150" fill="#ff6600" opacity="0.06"/>
+  <text x="450" y="320" text-anchor="middle" font-family="Arial Black" font-size="100" fill="#ff6600" opacity="0.2" font-weight="900">F1</text>
+  <rect x="300" y="380" width="300" height="80" rx="4" fill="#b5f900" opacity="0.85"/>
+  <text x="450" y="410" text-anchor="middle" font-family="Arial" font-size="18" fill="#000" font-weight="bold">ON TRACK</text>
+  <text x="450" y="440" text-anchor="middle" font-family="Arial" font-size="13" fill="#000" opacity="0.7">Place on-track.jpg in public/images/</text>
+</svg>
