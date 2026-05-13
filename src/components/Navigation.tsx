@@ -159,7 +159,18 @@ export default function Navigation({ links, socialLinks }: NavigationProps) {
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="flex-1 flex flex-col justify-center px-8 pt-20">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img
+            src="/public/milestones/milestone-2.jpg"
+            alt=""
+            className="w-full h-full object-cover object-[65%] opacity-85 md:object-center"
+          />
+          {/* Gradient to darken the image and make text pop */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/90" />
+        </div>
+
+        <div className="relative z-10 flex-1 flex flex-col justify-center px-8 pt-20">
           <ul className="flex flex-col gap-2">
             {links.map((link, i) => (
               <li
