@@ -346,12 +346,15 @@ export default function MilestonesScroll() {
                 ref={(el) => { imgWrapRefs.current[i] = el; }}
                 className="absolute inset-0 scale-[1.15]"
               >
-                <img
-                  src={panel.image}
-                  alt={panel.title.replace('\n', ' ')}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+                <picture className="w-full h-full block">
+                  <source media="(max-width: 767px)" srcSet={panel.image.replace('.jpg', '-mobile.jpg')} />
+                  <img
+                    src={panel.image}
+                    alt={panel.title.replace('\n', ' ')}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
               {/* Gradient overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/20 pointer-events-none" />
