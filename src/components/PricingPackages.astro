@@ -1,0 +1,190 @@
+---
+const commonIncludes = [
+  'Análisis de competencia',
+  'Definición de buyer persona',
+  'Tono de comunicación de marca',
+  'Seguimiento diario',
+  'Reporte mensual',
+  'Manual de seguimiento de ventas por WhatsApp',
+];
+
+interface Package {
+  number: string;
+  name: string;
+  tagline: string;
+  price: string;
+  features: string[];
+  addon: string | null;
+  featured: boolean;
+}
+
+const packages: Package[] = [
+  {
+    number: '01',
+    name: 'Google Ads',
+    tagline: 'Recomendado para empresas que quieren empezar a tener más clientes por Google.',
+    price: '$7,790',
+    features: [
+      'Una campaña en Google con seguimiento diario y optimización semanal',
+      'Sin límite de conjuntos de anuncios ni anuncios',
+      'Landing page incluida: actualización mensual, responsiva, IA integrada',
+      'Dashboard de prospectos + plan de seguimiento personalizado',
+    ],
+    addon: '¿Necesitas más alcance? Por $4,500 adicionales al mes puedes activar hasta 2 campañas más en Google.',
+    featured: false,
+  },
+  {
+    number: '02',
+    name: 'Contenido + Meta Ads',
+    tagline: 'Para marcas que necesitan presencia activa en redes con contenido y campañas orientadas a conversión real.',
+    price: '$9,460',
+    features: [
+      'Contenido mensual personalizado en Meta',
+      'Tres campañas en Meta: interacción, crecimiento y venta',
+      'Copy y diseño de anuncios incluidos',
+      'Segmentación por objetivo, seguimiento diario y optimización semanal',
+      'Dashboard de prospectos + plan de seguimiento personalizado',
+    ],
+    addon: null,
+    featured: false,
+  },
+  {
+    number: '03',
+    name: 'Estrategia Digital 360°',
+    tagline: 'Para quien quiere delegar todo y crecer en todos los frentes con un solo equipo y un solo interlocutor.',
+    price: '$17,250',
+    features: [
+      'Google Ads + Meta Ads + contenido mensual en Meta',
+      'Landing page + SEO + IA aplicada — todo integrado',
+      'Producción completa: copy, diseño, video y reels',
+      'Dashboard de prospectos + plan de seguimiento personalizado',
+    ],
+    addon: null,
+    featured: true,
+  },
+  {
+    number: '04',
+    name: 'Estrategia 360° Completa',
+    tagline: 'Para quien quiere el ecosistema digital completo sin límites.',
+    price: '$23,000',
+    features: [
+      'Google Ads + Meta Ads + TikTok + contenido mensual para redes',
+      'Landing page + SEO + IA aplicada — todo integrado',
+      'Producción completa: copy, diseño, video y reels',
+      'Dashboard de prospectos + seguimiento + CRM integrado con Clientify',
+    ],
+    addon: null,
+    featured: false,
+  },
+];
+---
+
+<section id="paquetes" class="bg-[#080808] py-20 md:py-28">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+
+    <!-- Header -->
+    <div class="mb-10 md:mb-14">
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand-lime mb-3">Paquetes</p>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-tight max-w-4xl mb-6">
+        Elige el modelo que se adapta a tu etapa y objetivos.
+      </h2>
+      <p class="text-white/40 text-sm leading-relaxed max-w-3xl">
+        Todos los paquetes incluyen:
+        <span class="text-white/55"> {commonIncludes.join(' · ')}.</span>
+        Lo que cambia es el alcance y los canales.
+      </p>
+    </div>
+
+    <!-- Packages grid - bento 2×2 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5">
+      {packages.map((pkg) => (
+        <div
+          class={`relative flex flex-col p-8 md:p-10 transition-colors duration-300 ${
+            pkg.featured
+              ? 'bg-white/[0.06] hover:bg-white/[0.08]'
+              : 'bg-[#080808] hover:bg-white/[0.03]'
+          }`}
+        >
+          {pkg.featured && (
+            <div class="absolute top-0 left-0 right-0 h-0.5 bg-brand-lime" />
+          )}
+
+          <!-- Package header -->
+          <div class="mb-6">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-brand-lime/35 text-xs font-black uppercase tracking-widest">{pkg.number}</span>
+              {pkg.featured && (
+                <span class="bg-brand-lime text-black text-[10px] font-black uppercase tracking-widest px-2 py-0.5">
+                  Recomendado
+                </span>
+              )}
+            </div>
+            <h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white mb-2">
+              {pkg.name}
+            </h3>
+            <p class="text-white/45 text-sm leading-relaxed">{pkg.tagline}</p>
+          </div>
+
+          <!-- Features list -->
+          <ul class="flex flex-col gap-3 mb-8 flex-1">
+            {pkg.features.map((feature) => (
+              <li class="flex items-start gap-3 text-sm text-white/60 leading-snug">
+                <svg class="w-3.5 h-3.5 text-brand-lime flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          {pkg.addon && (
+            <p class="text-white/25 text-xs leading-relaxed mb-6 pl-3 border-l border-white/10">
+              {pkg.addon}
+            </p>
+          )}
+
+          <!-- Price + CTA -->
+          <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+            <div>
+              <p class="text-[10px] font-semibold uppercase tracking-widest text-white/25 mb-1">Desde</p>
+              <p class="text-2xl md:text-3xl font-black text-white">
+                {pkg.price}
+                <span class="text-sm font-medium text-white/30 ml-1">+ IVA + pauta / mes</span>
+              </p>
+            </div>
+            <a
+              href="#contacto"
+              class={`group inline-flex items-center gap-2 font-black uppercase text-xs tracking-widest px-5 py-3 transition-colors duration-200 flex-shrink-0 ${
+                pkg.featured
+                  ? 'bg-brand-lime text-black hover:bg-white'
+                  : 'border border-white/20 text-white hover:border-brand-lime hover:text-brand-lime'
+              }`}
+            >
+              Agendar asesoría
+              <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom closing note -->
+    <div class="mt-px bg-white/[0.02] p-8 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <p class="text-white/35 text-sm leading-relaxed max-w-xl">
+        Un solo equipo. Un solo interlocutor. Todo el ecosistema digital cubierto.
+      </p>
+      <a
+        href="#contacto"
+        class="group inline-flex items-center gap-3 border border-white/20 text-white hover:border-brand-lime hover:text-brand-lime font-black uppercase text-xs tracking-widest px-6 py-4 transition-colors duration-200 flex-shrink-0"
+      >
+        ¿No sabes cuál elegir? Hablemos.
+        <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>

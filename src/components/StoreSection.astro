@@ -3,80 +3,164 @@ interface Props {
   storeUrl?: string;
 }
 
-const { storeUrl = "https://store.landonorris.com" } = Astro.props;
+// storeUrl prop kept for backwards compat but unused
 ---
 
 <section
-  id="store"
-  class="relative overflow-hidden min-h-[80vh] flex items-center"
+  id="contacto"
+  class="relative overflow-hidden"
 >
   <!-- Background -->
   <div class="absolute inset-0">
     <img
       src="/images/store-bg.jpg"
-      alt="Lando Norris Championship Merchandise"
+      alt="dínamo — Contacto"
       class="w-full h-full object-cover object-center"
       loading="lazy"
     />
-    <div class="absolute inset-0 bg-black/70"></div>
-    <!-- Gold tint overlay -->
-    <div class="absolute inset-0 bg-brand-gold/10"></div>
+    <div class="absolute inset-0 bg-black/80"></div>
+    <div class="absolute inset-0 bg-brand-lime/5"></div>
   </div>
 
   <!-- Decorative corner accents -->
-  <div
-    class="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-brand-gold"
-  >
-  </div>
-  <div
-    class="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-brand-gold"
-  >
-  </div>
-  <div
-    class="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-brand-gold"
-  >
-  </div>
-  <div
-    class="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-brand-gold"
-  >
-  </div>
+  <div class="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-brand-lime/40"></div>
+  <div class="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-brand-lime/40"></div>
+  <div class="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-brand-lime/40"></div>
+  <div class="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-brand-lime/40"></div>
 
   <!-- Content -->
-  <div
-    class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-10 py-24 text-center"
-  >
-    <p
-      class="text-xs font-bold uppercase tracking-[0.4em] text-brand-gold mb-4"
-    >
-      Official Merchandise
-    </p>
-    <h2
-      class="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white leading-none mb-6"
-    >
-      LN Store
-    </h2>
-    <p
-      class="text-base md:text-lg text-white/60 max-w-lg mx-auto mb-10 font-medium"
-    >
-      Championship edition gear. Wear the legacy. Limited availability.
-    </p>
-    <a
-      href={storeUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="group inline-flex items-center gap-3 bg-brand-gold text-black font-black uppercase text-sm tracking-widest px-8 py-4 hover:bg-white transition-colors duration-200"
-    >
-      Shop Now
-      <svg
-        class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="3"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"
-        ></path>
-      </svg>
-    </a>
+  <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-10 py-20 md:py-28">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+      <!-- Left: copy -->
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.4em] text-brand-lime mb-4">Sin obligación de contratar</p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-tight mb-6">
+          El primer paso es una conversación.
+        </h2>
+        <p class="text-base md:text-lg text-white/55 leading-relaxed mb-8 max-w-md">
+          Antes de recomendarte cualquier cosa, queremos entender dónde estás y qué necesitas. Sin guiones de venta, sin propuestas genéricas.
+        </p>
+        <div class="flex flex-col gap-3">
+          <div class="flex items-start gap-3">
+            <div class="w-1.5 h-1.5 rounded-full bg-brand-lime mt-2 flex-shrink-0"></div>
+            <p class="text-white/40 text-sm">Respuesta en menos de 24 horas en días hábiles</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-1.5 h-1.5 rounded-full bg-brand-lime mt-2 flex-shrink-0"></div>
+            <p class="text-white/40 text-sm">Asesoría inicial sin costo ni compromiso</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-1.5 h-1.5 rounded-full bg-brand-lime mt-2 flex-shrink-0"></div>
+            <p class="text-white/40 text-sm">Atendemos clientes en toda la república y en el extranjero</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: contact form -->
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-10">
+        <form
+          method="POST"
+          action="#"
+          class="flex flex-col gap-5"
+        >
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="flex flex-col gap-2">
+              <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Nombre</label>
+              <input
+                type="text"
+                name="nombre"
+                required
+                placeholder="Tu nombre"
+                class="bg-white/5 border border-white/10 text-white placeholder:text-white/20 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200"
+              />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Empresa</label>
+              <input
+                type="text"
+                name="empresa"
+                placeholder="Nombre de tu empresa"
+                class="bg-white/5 border border-white/10 text-white placeholder:text-white/20 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Presupuesto mensual (MXN)</label>
+            <select
+              name="presupuesto"
+              class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200 appearance-none"
+            >
+              <option value="" disabled selected class="bg-[#0d0d0d]">Selecciona un rango</option>
+              <option value="hasta-15k" class="bg-[#0d0d0d]">Hasta $15,000</option>
+              <option value="15k-30k" class="bg-[#0d0d0d]">$15,000 – $30,000</option>
+              <option value="30k-50k" class="bg-[#0d0d0d]">$30,000 – $50,000</option>
+              <option value="mas-50k" class="bg-[#0d0d0d]">Más de $50,000</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="flex flex-col gap-2">
+              <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Urgencia</label>
+              <select
+                name="urgencia"
+                class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200 appearance-none"
+              >
+                <option value="" disabled selected class="bg-[#0d0d0d]">¿Cuándo arrancan?</option>
+                <option value="asap" class="bg-[#0d0d0d]">Lo antes posible</option>
+                <option value="1-2-semanas" class="bg-[#0d0d0d]">En 1–2 semanas</option>
+                <option value="1-mes" class="bg-[#0d0d0d]">En aproximadamente 1 mes</option>
+                <option value="explorando" class="bg-[#0d0d0d]">Solo explorando opciones</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Canal preferido</label>
+              <select
+                name="canal"
+                class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200 appearance-none"
+              >
+                <option value="" disabled selected class="bg-[#0d0d0d]">¿Cómo te contactamos?</option>
+                <option value="whatsapp" class="bg-[#0d0d0d]">WhatsApp</option>
+                <option value="email" class="bg-[#0d0d0d]">Email</option>
+                <option value="telefono" class="bg-[#0d0d0d]">Teléfono</option>
+                <option value="videollamada" class="bg-[#0d0d0d]">Videollamada</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Cuéntanos más (opcional)</label>
+            <textarea
+              name="mensaje"
+              rows="3"
+              placeholder="¿Cuál es tu principal reto de marketing ahora mismo?"
+              class="bg-white/5 border border-white/10 text-white placeholder:text-white/20 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200 resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="group inline-flex items-center justify-center gap-3 bg-brand-lime text-black font-black uppercase text-sm tracking-widest px-6 py-4 hover:bg-white transition-colors duration-200 mt-1"
+          >
+            Agenda tu primera asesoría
+            <svg
+              class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="3"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+
+          <p class="text-white/20 text-xs text-center">
+            Sin obligación de contratar. Respondemos en menos de 24 horas.
+          </p>
+        </form>
+      </div>
+
+    </div>
   </div>
 </section>

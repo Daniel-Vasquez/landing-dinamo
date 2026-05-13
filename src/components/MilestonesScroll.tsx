@@ -22,73 +22,73 @@ interface PanelData {
 
 const PANELS: PanelData[] = [
   {
-    tag: '01 — THE DRIVER',
+    tag: '01 — TE ESCUCHAMOS DE VERDAD',
     year: '',
-    title: 'THE\nDRIVER',
-    subtitle: 'Born 1999 · Bristol, UK',
+    title: 'LA\nESCUCHA',
+    subtitle: 'Sin fórmulas genéricas · Sin guiones de venta',
     description:
-      'From karting prodigy to Formula 1 star. Lando Norris made his F1 debut at just 19 years old and never looked back.',
-    image: '/milestones/milestone-1.jpg',
+      'Antes de proponer cualquier cosa, entendemos tu negocio, tu competencia y tus objetivos reales. Juntos definimos qué significa éxito para tu marca.',
+    image: '/images/on-track.jpg',
     stats: [
-      { label: 'F1 Debut', value: 2019, suffix: '' },
-      { label: 'Driver No.', value: 4, suffix: '' },
-      { label: 'Races', value: 134, suffix: '' },
+      { label: 'Años de experiencia', value: 16, suffix: '' },
+      { label: 'Marcas satisfechas', value: 300, suffix: '+' },
+      { label: 'Países', value: 5, suffix: '+' },
     ],
   },
   {
-    tag: '02 — FIRST WIN',
-    year: '2024',
-    title: 'FIRST\nWIN',
-    subtitle: 'Race No. 110 · Miami GP',
-    description:
-      'May 5, 2024. After 109 races and countless near-misses, Lando Norris took his first Formula 1 victory at the Miami Grand Prix.',
-    image: '/milestones/milestone-2.jpg',
-    stats: [
-      { label: 'Race Number', value: 110, suffix: '' },
-      { label: 'Winning Lap', value: 57, suffix: '' },
-      { label: 'Gap to P2', value: 7, suffix: 's' },
-    ],
-  },
-  {
-    tag: '03 — BY THE NUMBERS',
+    tag: '02 — ANALIZAMOS ANTES DE PROPONER',
     year: '',
-    title: 'BY THE\nNUMBERS',
-    subtitle: 'Career Statistics',
+    title: 'EL\nANÁLISIS',
+    subtitle: 'Mercado · Competencia · Data disponible',
     description:
-      'Every race, every lap, every tenth of a second — relentlessly building toward the ultimate goal.',
-    image: '/milestones/milestone-3.jpg',
+      'Investigamos tu mercado, estudiamos a tu competencia y revisamos la data disponible. Solo cuando entendemos el panorama completo diseñamos la estrategia.',
+    image: '/images/off-track.jpg',
     stats: [
-      { label: 'Podiums', value: 15, suffix: '' },
-      { label: 'Fastest Laps', value: 13, suffix: '' },
-      { label: '2024 Points', value: 320, suffix: '' },
+      { label: 'Canales analizados', value: 6, suffix: '' },
+      { label: 'Herramientas IA', value: 5, suffix: '+' },
+      { label: 'Semanas de análisis', value: 2, suffix: '' },
     ],
   },
   {
-    tag: '04 — THE CHAMPIONSHIP',
-    year: '2024',
-    title: 'BEST\nSEASON',
-    subtitle: 'P4 World Championship',
+    tag: '03 — LA CREATIVIDAD TIENE CRITERIO',
+    year: '',
+    title: 'CRITERIO\nCREATIVO',
+    subtitle: 'Revisión interna antes de llegar a ti',
     description:
-      'Three race wins. Five pole positions. 320 championship points. The 2024 season was a statement of intent.',
-    image: '/milestones/milestone-4.jpg',
+      'Cada propuesta — copy, diseño, campaña o contenido — pasa por revisión detallada antes de llegar a ti. Si no cumple el estándar, no sale. Tú siempre ves trabajo terminado.',
+    image: '/images/hero-bg.jpg',
     stats: [
-      { label: 'Race Wins', value: 3, suffix: '' },
-      { label: 'Pole Positions', value: 5, suffix: '' },
-      { label: 'WDC Position', value: 4, suffix: '' },
+      { label: 'Revisión interna', value: 100, suffix: '%' },
+      { label: 'Herramientas creativas', value: 10, suffix: '+' },
+      { label: 'Formatos de contenido', value: 8, suffix: '+' },
     ],
   },
   {
-    tag: "05 — WHAT'S NEXT",
-    year: '2025',
-    title: 'EYES\nON IT',
-    subtitle: 'MCL39 · Season 2025',
+    tag: '04 — EJECUTAMOS CON PRECISIÓN',
+    year: '',
+    title: 'EJECUCIÓN\nPRECISA',
+    subtitle: 'Nada se activa sin tu aprobación',
     description:
-      'The hunger is real. The car is fast. 2025 is the year Lando Norris goes all in for the World Championship.',
-    image: '/milestones/milestone-5.jpg',
+      'Copy, diseños, segmentación, creatividades — todo pasa por ti primero. En campañas, la optimización empieza desde el día siguiente al arranque.',
+    image: '/images/store-bg.jpg',
     stats: [
-      { label: 'Season', value: 2025, suffix: '' },
-      { label: 'Rounds', value: 24, suffix: '' },
-      { label: 'Target', value: 1, suffix: 'st' },
+      { label: 'Pauta mensual ($K)', value: 500, suffix: '+' },
+      { label: 'Días de seguimiento', value: 30, suffix: '' },
+      { label: 'Respuesta (horas)', value: 24, suffix: '' },
+    ],
+  },
+  {
+    tag: '05 — EVOLUCIONAMOS CONTIGO',
+    year: '',
+    title: 'SIEMPRE\nADELANTE',
+    subtitle: 'Métricas · Decisiones · Siguiente ciclo',
+    description:
+      'Nos reunimos cada mes para revisar resultados y definir el plan del siguiente ciclo. dínamo adopta nuevas herramientas antes de que se vuelvan estándar — tu estrategia siempre tiene ventaja.',
+    image: '/images/social-1.jpg',
+    stats: [
+      { label: 'Reportes al año', value: 12, suffix: '' },
+      { label: 'Optimizaciones/semana', value: 4, suffix: '' },
+      { label: 'Ciclos de mejora', value: 52, suffix: '' },
     ],
   },
 ];
@@ -329,7 +329,7 @@ export default function MilestonesScroll() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="milestones" className="relative bg-brand-dark overflow-hidden">
+    <section ref={sectionRef} id="proceso" className="relative bg-brand-dark overflow-hidden">
 
       {/* Horizontal track */}
       <div ref={trackRef} className="flex flex-col md:flex-row">
@@ -346,15 +346,12 @@ export default function MilestonesScroll() {
                 ref={(el) => { imgWrapRefs.current[i] = el; }}
                 className="absolute inset-0 scale-[1.15]"
               >
-                <picture className="w-full h-full block">
-                  <source media="(max-width: 767px)" srcSet={panel.image.replace('.jpg', '-mobile.jpg')} />
-                  <img
-                    src={panel.image}
-                    alt={panel.title.replace('\n', ' ')}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </picture>
+                <img
+                  src={panel.image}
+                  alt={panel.title.replace('\n', ' ')}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
               {/* Gradient overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/20 pointer-events-none" />
