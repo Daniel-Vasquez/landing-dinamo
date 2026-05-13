@@ -162,7 +162,7 @@ export default function Navigation({ links, socialLinks }: NavigationProps) {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="/public/milestones/milestone-2.jpg"
+            src="/milestones/milestone-2.jpg"
             alt=""
             className="w-full h-full object-cover object-[65%] opacity-85 md:object-center"
           />
