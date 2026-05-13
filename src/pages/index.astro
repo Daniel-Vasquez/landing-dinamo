@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation';
 import HeroCanvas from '../components/HeroCanvas';
 import TrackTiles from '../components/TrackTiles.astro';
 import HelmetCarousel from '../components/HelmetCarousel';
+import MilestonesScroll from '../components/MilestonesScroll';
 import Partnerships from '../components/Partnerships.astro';
 import StoreSection from '../components/StoreSection.astro';
 import SocialFeed from '../components/SocialFeed.astro';
@@ -93,6 +94,8 @@ const socialPosts = [
     <TrackTiles tiles={trackTiles} />
 
     <HelmetCarousel client:visible helmets={helmets} />
+
+    <MilestonesScroll client:visible />
 
     <Partnerships partners={partners} />
 
