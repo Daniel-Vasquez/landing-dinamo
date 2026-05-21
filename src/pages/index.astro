@@ -1,88 +1,128 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation';
-import HeroCanvas from '../components/HeroCanvas';
-import PainPoints from '../components/PainPoints.astro';
-import TrackTiles from '../components/TrackTiles.astro';
-import PricingPackages from '../components/PricingPackages.astro';
-import MilestonesScroll from '../components/MilestonesScroll';
-import SocialFeed from '../components/SocialFeed.astro';
-import Partnerships from '../components/Partnerships.astro';
-import FAQ from '../components/FAQ.astro';
-import StoreSection from '../components/StoreSection.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation";
+import HeroCanvas from "../components/HeroCanvas";
+import PainPoints from "../components/PainPoints.astro";
+import TrackTiles from "../components/TrackTiles.astro";
+import PricingPackages from "../components/PricingPackages.astro";
+import MilestonesScroll from "../components/MilestonesScroll";
+import SocialFeed from "../components/SocialFeed.astro";
+import Partnerships from "../components/Partnerships.astro";
+import FAQ from "../components/FAQ.astro";
+import StoreSection from "../components/StoreSection.astro";
+import Footer from "../components/Footer.astro";
 
 const navLinks = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Paquetes', href: '#paquetes' },
-  { label: 'Proceso', href: '#proceso' },
-  { label: 'Testimonios', href: '#testimonios' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Paquetes", href: "#paquetes" },
+  { label: "Proceso", href: "#proceso" },
+  { label: "Testimonios", href: "#testimonios" },
+  { label: "Contacto", href: "#contacto" },
 ];
 
 const socialLinks = [
-  { name: 'Instagram', href: '#' },
-  { name: 'TikTok', href: '#' },
-  { name: 'YouTube', href: '#' },
-  { name: 'X', href: '#' },
+  { name: "Instagram", href: "#" },
+  { name: "TikTok", href: "#" },
+  { name: "YouTube", href: "#" },
+  { name: "X", href: "#" },
 ];
 
 // Service pillars — using existing imagery as abstract backgrounds
 const serviceTiles = [
   {
-    id: 'estrategia',
-    title: 'Estrategia',
-    subtitle: 'Investigación · Buyer persona · Benchmarking',
-    image: '/images/on-track.jpg',
-    href: '#paquetes',
+    id: "estrategia",
+    title: "Estrategia",
+    subtitle: "Investigación · Buyer persona · Benchmarking",
+    image: "/images/dinamo.jpeg",
+    href: "#paquetes",
   },
   {
-    id: 'creatividad',
-    title: 'Creatividad',
-    subtitle: 'Copy · Diseño · Video · Reels · Logotipo',
-    image: '/images/off-track.jpg',
-    href: '#paquetes',
+    id: "creatividad",
+    title: "Creatividad",
+    subtitle: "Copy · Diseño · Video · Reels · Logotipo",
+    image: "/images/dinamo-2.jpeg",
+    href: "#paquetes",
   },
   {
-    id: 'tecnologia',
-    title: 'Tecnología',
-    subtitle: 'Google Ads · Meta Ads · TikTok · SEO',
-    image: '/images/hero-bg.jpg',
-    href: '#paquetes',
+    id: "tecnologia",
+    title: "Tecnología",
+    subtitle: "Google Ads · Meta Ads · TikTok · SEO",
+    image: "/images/dinamo-5.jpeg",
+    href: "#paquetes",
   },
   {
-    id: 'seguimiento',
-    title: 'Seguimiento',
-    subtitle: 'Dashboard · Métricas · Reportes · CRM',
-    image: '/images/store-bg.jpg',
-    href: '#paquetes',
+    id: "seguimiento",
+    title: "Seguimiento",
+    subtitle: "Dashboard · Métricas · Reportes · CRM",
+    image: "/images/dinamo-4.jpeg",
+    href: "#paquetes",
   },
 ];
 
 // Credentials and platforms grid
 const credentials = [
-  { name: '16 años\nde experiencia' },
-  { name: 'Socios\nde Google' },
-  { name: '+$500,000\nen pauta mensual' },
-  { name: '+300 marcas\nsatisfechas' },
-  { name: 'Google Ads' },
-  { name: 'Meta Ads' },
-  { name: 'TikTok Ads' },
-  { name: 'LinkedIn Ads' },
-  { name: 'SEO' },
-  { name: 'Claude · ChatGPT\nMidjourney · Runway' },
+  { name: "16 años\nde experiencia" },
+  { name: "Socios\nde Google" },
+  { name: "+$500,000\nen pauta mensual" },
+  { name: "+300 marcas\nsatisfechas" },
+  { name: "Google Ads" },
+  { name: "Meta Ads" },
+  { name: "TikTok Ads" },
+  { name: "LinkedIn Ads" },
+  { name: "SEO" },
+  { name: "Claude · ChatGPT\nMidjourney · Runway" },
 ];
 
 // Testimonial thumbnails — Vimeo embed URLs to be added per video
 const testimonialPosts = [
-  { platform: 'youtube' as const, image: '/images/social-1.jpg', href: '#testimonios', alt: 'Testimonio cliente 1' },
-  { platform: 'youtube' as const, image: '/images/social-2.jpg', href: '#testimonios', alt: 'Testimonio cliente 2' },
-  { platform: 'youtube' as const, image: '/images/social-3.jpg', href: '#testimonios', alt: 'Testimonio cliente 3' },
-  { platform: 'youtube' as const, image: '/images/social-4.jpg', href: '#testimonios', alt: 'Testimonio cliente 4' },
-  { platform: 'youtube' as const, image: '/images/social-5.jpg', href: '#testimonios', alt: 'Testimonio cliente 5' },
-  { platform: 'youtube' as const, image: '/images/social-6.jpg', href: '#testimonios', alt: 'Testimonio cliente 6' },
-  { platform: 'youtube' as const, image: '/images/social-7.jpg', href: '#testimonios', alt: 'Testimonio cliente 7' },
-  { platform: 'youtube' as const, image: '/images/social-8.jpg', href: '#testimonios', alt: 'Testimonio cliente 8' },
+  {
+    platform: "youtube" as const,
+    image: "/images/social-1.jpg",
+    href: "#testimonios",
+    alt: "Testimonio cliente 1",
+  },
+  {
+    platform: "youtube" as const,
+    image: "/images/social-2.jpg",
+    href: "#testimonios",
+    alt: "Testimonio cliente 2",
+  },
+  {
+    platform: "youtube" as const,
+    image: "/images/social-3.jpg",
+    href: "#testimonios",
+    alt: "Testimonio cliente 3",
+  },
+  {
+    platform: "youtube" as const,
+    image: "/images/social-4.jpg",
+    href: "#testimonios",
+    alt: "Testimonio cliente 4",
+  },
+  {
+    platform: "youtube" as const,
+    image: "/images/social-5.jpg",
+    href: "#testimonios",
+    alt: "Testimonio cliente 5",
+  },
+  {
+    platform: "youtube" as const,
+    image: "/images/social-6.jpg",
+    href: "#testimonios",
+    alt: "Testimonio cliente 6",
+  },
+  {
+    platform: "youtube" as const,
+    image: "/images/social-7.jpg",
+    href: "#testimonios",
+    alt: "Testimonio cliente 7",
+  },
+  {
+    platform: "youtube" as const,
+    image: "/images/social-8.jpg",
+    href: "#testimonios",
+    alt: "Testimonio cliente 8",
+  },
 ];
 ---
 
@@ -90,11 +130,7 @@ const testimonialPosts = [
   title="dínamo | Agencia de Publicidad y Marketing Digital · México"
   description="Construimos tu ecosistema digital completo — Google Ads, Meta Ads, contenido, landing pages y seguimiento de prospectos. 16 años de experiencia, socios de Google, +300 marcas satisfechas."
 >
-  <Navigation
-    client:load
-    links={navLinks}
-    socialLinks={socialLinks}
-  />
+  <Navigation client:load links={navLinks} socialLinks={socialLinks} />
 
   <main>
     <!-- Hero: animación de canvas con frames — texto actualizado al nuevo copy -->

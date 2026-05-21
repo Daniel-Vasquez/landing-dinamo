@@ -5,9 +5,9 @@ export default {
     extend: {
       colors: {
         brand: {
-          lime: '#b5f900',
-          gold: '#c9a84c',
-          dark: '#0a0a0a',
+          lime: '#f0503d',
+          gold: '#51b58f',
+          dark: '#0d1225',
           gray: '#888888',
           'gray-light': '#cccccc',
         },

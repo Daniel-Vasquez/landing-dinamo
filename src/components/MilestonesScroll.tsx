@@ -131,7 +131,7 @@ export default function MilestonesScroll() {
               dotRefs.current.forEach((dot, i) => {
                 if (!dot) return;
                 dot.style.backgroundColor =
-                  i === active ? '#b5f900' : 'rgba(255,255,255,0.2)';
+                  i === active ? '#f0503d' : 'rgba(255,255,255,0.2)';
                 dot.style.width = i === active ? '28px' : '14px';
               });
             },
@@ -408,7 +408,7 @@ export default function MilestonesScroll() {
                   {/* Lime accent line */}
                   <div
                     ref={(el) => { lineRefs.current[i] = el; }}
-                    className="h-[2px] bg-brand-lime mt-6 origin-left"
+                    className="h-[2px] bg-brand-gold mt-6 origin-left"
                     style={{ width: '64px' }}
                   />
 
@@ -474,7 +474,7 @@ export default function MilestonesScroll() {
             className="h-[2px] rounded-full transition-all duration-300"
             style={{
               width: i === 0 ? '28px' : '14px',
-              backgroundColor: i === 0 ? '#b5f900' : 'rgba(255,255,255,0.2)',
+              backgroundColor: i === 0 ? '#f0503d' : 'rgba(255,255,255,0.2)',
             }}
           />
         ))}

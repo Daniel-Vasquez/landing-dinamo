@@ -19,14 +19,14 @@ interface Props {
       loading="lazy"
     />
     <div class="absolute inset-0 bg-black/80"></div>
-    <div class="absolute inset-0 bg-brand-lime/5"></div>
+    <div class="absolute inset-0 bg-brand-gold/5"></div>
   </div>
 
   <!-- Decorative corner accents -->
-  <div class="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-brand-lime/40"></div>
-  <div class="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-brand-lime/40"></div>
-  <div class="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-brand-lime/40"></div>
-  <div class="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-brand-lime/40"></div>
+  <div class="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-brand-gold/40"></div>
+  <div class="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-brand-gold/40"></div>
+  <div class="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-brand-gold/40"></div>
+  <div class="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-brand-gold/40"></div>
 
   <!-- Content -->
   <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-10 py-20 md:py-28">
@@ -43,15 +43,15 @@ interface Props {
         </p>
         <div class="flex flex-col gap-3">
           <div class="flex items-start gap-3">
-            <div class="w-1.5 h-1.5 rounded-full bg-brand-lime mt-2 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 flex-shrink-0"></div>
             <p class="text-white/40 text-sm">Respuesta en menos de 24 horas en días hábiles</p>
           </div>
           <div class="flex items-start gap-3">
-            <div class="w-1.5 h-1.5 rounded-full bg-brand-lime mt-2 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 flex-shrink-0"></div>
             <p class="text-white/40 text-sm">Asesoría inicial sin costo ni compromiso</p>
           </div>
           <div class="flex items-start gap-3">
-            <div class="w-1.5 h-1.5 rounded-full bg-brand-lime mt-2 flex-shrink-0"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 flex-shrink-0"></div>
             <p class="text-white/40 text-sm">Atendemos clientes en toda la república y en el extranjero</p>
           </div>
         </div>
@@ -72,7 +72,7 @@ interface Props {
                 name="nombre"
                 required
                 placeholder="Tu nombre"
-                class="bg-white/5 border border-white/10 text-white placeholder:text-white/20 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200"
+                class="bg-white/5 border border-white/10 text-white placeholder:text-white/20 text-sm px-4 py-3 focus:outline-none focus:border-brand-gold/50 transition-colors duration-200"
               />
             </div>
             <div class="flex flex-col gap-2">
@@ -81,7 +81,7 @@ interface Props {
                 type="text"
                 name="empresa"
                 placeholder="Nombre de tu empresa"
-                class="bg-white/5 border border-white/10 text-white placeholder:text-white/20 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200"
+                class="bg-white/5 border border-white/10 text-white placeholder:text-white/20 text-sm px-4 py-3 focus:outline-none focus:border-brand-gold/50 transition-colors duration-200"
               />
             </div>
           </div>
@@ -90,13 +90,13 @@ interface Props {
             <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Presupuesto mensual (MXN)</label>
             <select
               name="presupuesto"
-              class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200 appearance-none"
+              class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-gold/50 transition-colors duration-200 appearance-none"
             >
-              <option value="" disabled selected class="bg-[#0d0d0d]">Selecciona un rango</option>
-              <option value="hasta-15k" class="bg-[#0d0d0d]">Hasta $15,000</option>
-              <option value="15k-30k" class="bg-[#0d0d0d]">$15,000 – $30,000</option>
-              <option value="30k-50k" class="bg-[#0d0d0d]">$30,000 – $50,000</option>
-              <option value="mas-50k" class="bg-[#0d0d0d]">Más de $50,000</option>
+              <option value="" disabled selected class="bg-[#0d1225]">Selecciona un rango</option>
+              <option value="hasta-15k" class="bg-[#0d1225]">Hasta $15,000</option>
+              <option value="15k-30k" class="bg-[#0d1225]">$15,000 – $30,000</option>
+              <option value="30k-50k" class="bg-[#0d1225]">$30,000 – $50,000</option>
+              <option value="mas-50k" class="bg-[#0d1225]">Más de $50,000</option>
             </select>
           </div>
 
@@ -105,26 +105,26 @@ interface Props {
               <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Urgencia</label>
               <select
                 name="urgencia"
-                class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200 appearance-none"
+                class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-gold/50 transition-colors duration-200 appearance-none"
               >
-                <option value="" disabled selected class="bg-[#0d0d0d]">¿Cuándo arrancan?</option>
-                <option value="asap" class="bg-[#0d0d0d]">Lo antes posible</option>
-                <option value="1-2-semanas" class="bg-[#0d0d0d]">En 1–2 semanas</option>
-                <option value="1-mes" class="bg-[#0d0d0d]">En aproximadamente 1 mes</option>
-                <option value="explorando" class="bg-[#0d0d0d]">Solo explorando opciones</option>
+                <option value="" disabled selected class="bg-[#0d1225]">¿Cuándo arrancan?</option>
+                <option value="asap" class="bg-[#0d1225]">Lo antes posible</option>
+                <option value="1-2-semanas" class="bg-[#0d1225]">En 1–2 semanas</option>
+                <option value="1-mes" class="bg-[#0d1225]">En aproximadamente 1 mes</option>
+                <option value="explorando" class="bg-[#0d1225]">Solo explorando opciones</option>
               </select>
             </div>
             <div class="flex flex-col gap-2">
               <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Canal preferido</label>
               <select
                 name="canal"
-                class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200 appearance-none"
+                class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-gold/50 transition-colors duration-200 appearance-none"
               >
-                <option value="" disabled selected class="bg-[#0d0d0d]">¿Cómo te contactamos?</option>
-                <option value="whatsapp" class="bg-[#0d0d0d]">WhatsApp</option>
-                <option value="email" class="bg-[#0d0d0d]">Email</option>
-                <option value="telefono" class="bg-[#0d0d0d]">Teléfono</option>
-                <option value="videollamada" class="bg-[#0d0d0d]">Videollamada</option>
+                <option value="" disabled selected class="bg-[#0d1225]">¿Cómo te contactamos?</option>
+                <option value="whatsapp" class="bg-[#0d1225]">WhatsApp</option>
+                <option value="email" class="bg-[#0d1225]">Email</option>
+                <option value="telefono" class="bg-[#0d1225]">Teléfono</option>
+                <option value="videollamada" class="bg-[#0d1225]">Videollamada</option>
               </select>
             </div>
           </div>
@@ -135,7 +135,7 @@ interface Props {
               name="mensaje"
               rows="3"
               placeholder="¿Cuál es tu principal reto de marketing ahora mismo?"
-              class="bg-white/5 border border-white/10 text-white placeholder:text-white/20 text-sm px-4 py-3 focus:outline-none focus:border-brand-lime/50 transition-colors duration-200 resize-none"
+              class="bg-white/5 border border-white/10 text-white placeholder:text-white/20 text-sm px-4 py-3 focus:outline-none focus:border-brand-gold/50 transition-colors duration-200 resize-none"
             ></textarea>
           </div>
 

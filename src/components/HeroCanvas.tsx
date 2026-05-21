@@ -215,7 +215,7 @@ export default function HeroCanvas({ nextRace = 'Monaco GP', raceDate = 'May 22â
         {/* Loading screen â€” fades out when all frames are ready */}
         {loadingVisible && (
           <div
-            className={`absolute inset-0 z-50 bg-[#0a0a0a] flex flex-col items-center justify-center gap-6 transition-opacity duration-500 ${
+            className={`absolute inset-0 z-50 bg-[#0d1225] flex flex-col items-center justify-center gap-6 transition-opacity duration-500 ${
               isLoaded ? 'opacity-0' : 'opacity-100'
             }`}
           >
