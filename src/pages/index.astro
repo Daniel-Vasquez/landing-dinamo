@@ -6,7 +6,6 @@ import PainPoints from "../components/PainPoints.astro";
 import TrackTiles from "../components/TrackTiles.astro";
 import PricingPackages from "../components/PricingPackages.astro";
 import MilestonesScroll from "../components/MilestonesScroll";
-import SocialFeed from "../components/SocialFeed.astro";
 import Partnerships from "../components/Partnerships.astro";
 import FAQ from "../components/FAQ.astro";
 import StoreSection from "../components/StoreSection.astro";
@@ -16,7 +15,6 @@ const navLinks = [
   { label: "Servicios", href: "#servicios" },
   { label: "Paquetes", href: "#paquetes" },
   { label: "Proceso", href: "#proceso" },
-  { label: "Testimonios", href: "#testimonios" },
   { label: "Contacto", href: "#contacto" },
 ];
 
@@ -73,57 +71,6 @@ const credentials = [
   { name: "Claude · ChatGPT\nMidjourney · Runway" },
 ];
 
-// Testimonial thumbnails — Vimeo embed URLs to be added per video
-const testimonialPosts = [
-  {
-    platform: "youtube" as const,
-    image: "/images/social-1.jpg",
-    href: "#testimonios",
-    alt: "Testimonio cliente 1",
-  },
-  {
-    platform: "youtube" as const,
-    image: "/images/social-2.jpg",
-    href: "#testimonios",
-    alt: "Testimonio cliente 2",
-  },
-  {
-    platform: "youtube" as const,
-    image: "/images/social-3.jpg",
-    href: "#testimonios",
-    alt: "Testimonio cliente 3",
-  },
-  {
-    platform: "youtube" as const,
-    image: "/images/social-4.jpg",
-    href: "#testimonios",
-    alt: "Testimonio cliente 4",
-  },
-  {
-    platform: "youtube" as const,
-    image: "/images/social-5.jpg",
-    href: "#testimonios",
-    alt: "Testimonio cliente 5",
-  },
-  {
-    platform: "youtube" as const,
-    image: "/images/social-6.jpg",
-    href: "#testimonios",
-    alt: "Testimonio cliente 6",
-  },
-  {
-    platform: "youtube" as const,
-    image: "/images/social-7.jpg",
-    href: "#testimonios",
-    alt: "Testimonio cliente 7",
-  },
-  {
-    platform: "youtube" as const,
-    image: "/images/social-8.jpg",
-    href: "#testimonios",
-    alt: "Testimonio cliente 8",
-  },
-];
 ---
 
 <Layout
@@ -147,9 +94,6 @@ const testimonialPosts = [
 
     <!-- Cómo trabajamos: 5 pasos en scroll horizontal -->
     <MilestonesScroll client:visible />
-
-    <!-- Testimoniales en video (Vimeo embeds por agregar) -->
-    <SocialFeed posts={testimonialPosts} />
 
     <!-- Credenciales y plataformas -->
     <Partnerships partners={credentials} />

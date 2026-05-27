@@ -399,7 +399,7 @@ export default function MilestonesScroll() {
                   >
                     <h2
                       className="font-black uppercase leading-[0.88] text-white whitespace-pre-line"
-                      style={{ fontSize: 'clamp(48px, 6.5vw, 100px)' }}
+                      style={{ fontSize: 'clamp(48px, 4vw, 100px)' }}
                     >
                       {panel.title}
                     </h2>
