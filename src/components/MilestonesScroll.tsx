@@ -17,6 +17,7 @@ interface PanelData {
   subtitle: string;
   description: string;
   image: string;
+  mobileImage: string;
   stats: Stat[];
 }
 
@@ -28,7 +29,8 @@ const PANELS: PanelData[] = [
     subtitle: 'Sin fórmulas genéricas · Sin guiones de venta',
     description:
       'Antes de proponer cualquier cosa, entendemos tu negocio, tu competencia y tus objetivos reales. Juntos definimos qué significa éxito para tu marca.',
-    image: '/images/on-track.jpg',
+    image: '/images/dinamo-2.jpeg',
+    mobileImage: '/images/dinamo-2-mobile.jpeg',
     stats: [
       { label: 'Años de experiencia', value: 16, suffix: '' },
       { label: 'Marcas satisfechas', value: 300, suffix: '+' },
@@ -42,7 +44,8 @@ const PANELS: PanelData[] = [
     subtitle: 'Mercado · Competencia · Data disponible',
     description:
       'Investigamos tu mercado, estudiamos a tu competencia y revisamos la data disponible. Solo cuando entendemos el panorama completo diseñamos la estrategia.',
-    image: '/images/off-track.jpg',
+    image: '/images/dinamo-4.jpeg',
+    mobileImage: '/images/dinamo-4-mobile.jpeg',
     stats: [
       { label: 'Canales analizados', value: 6, suffix: '' },
       { label: 'Herramientas IA', value: 5, suffix: '+' },
@@ -56,7 +59,8 @@ const PANELS: PanelData[] = [
     subtitle: 'Revisión interna antes de llegar a ti',
     description:
       'Cada propuesta — copy, diseño, campaña o contenido — pasa por revisión detallada antes de llegar a ti. Si no cumple el estándar, no sale. Tú siempre ves trabajo terminado.',
-    image: '/images/hero-bg.jpg',
+    image: '/images/dinamo-5.jpeg',
+    mobileImage: '/images/dinamo-5-mobile.jpeg',
     stats: [
       { label: 'Revisión interna', value: 100, suffix: '%' },
       { label: 'Herramientas creativas', value: 10, suffix: '+' },
@@ -70,7 +74,8 @@ const PANELS: PanelData[] = [
     subtitle: 'Nada se activa sin tu aprobación',
     description:
       'Copy, diseños, segmentación, creatividades — todo pasa por ti primero. En campañas, la optimización empieza desde el día siguiente al arranque.',
-    image: '/images/store-bg.jpg',
+    image: '/images/dinamo-6.jpeg',
+    mobileImage: '/images/dinamo-6-mobile.jpeg',
     stats: [
       { label: 'Pauta mensual ($K)', value: 500, suffix: '+' },
       { label: 'Días de seguimiento', value: 30, suffix: '' },
@@ -84,7 +89,8 @@ const PANELS: PanelData[] = [
     subtitle: 'Métricas · Decisiones · Siguiente ciclo',
     description:
       'Nos reunimos cada mes para revisar resultados y definir el plan del siguiente ciclo. dínamo adopta nuevas herramientas antes de que se vuelvan estándar — tu estrategia siempre tiene ventaja.',
-    image: '/images/social-1.jpg',
+    image: '/images/dinamo.jpeg',
+    mobileImage: '/images/dinamo-mobile.jpeg',
     stats: [
       { label: 'Reportes al año', value: 12, suffix: '' },
       { label: 'Optimizaciones/semana', value: 4, suffix: '' },
@@ -346,12 +352,18 @@ export default function MilestonesScroll() {
                 ref={(el) => { imgWrapRefs.current[i] = el; }}
                 className="absolute inset-0 scale-[1.15]"
               >
-                <img
-                  src={panel.image}
-                  alt={panel.title.replace('\n', ' ')}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    media="(max-width: 767px)"
+                    srcSet={panel.mobileImage}
+                  />
+                  <img
+                    src={panel.image}
+                    alt={panel.title.replace('\n', ' ')}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
               {/* Gradient overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/20 pointer-events-none" />
