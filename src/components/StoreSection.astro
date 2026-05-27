@@ -6,14 +6,11 @@ interface Props {
 // storeUrl prop kept for backwards compat but unused
 ---
 
-<section
-  id="contacto"
-  class="relative overflow-hidden"
->
+<section id="contacto" class="relative overflow-hidden">
   <!-- Background -->
   <div class="absolute inset-0">
     <img
-      src="/images/store-bg.jpg"
+      src="/images/dinamo.jpeg"
       alt="dínamo — Contacto"
       class="w-full h-full object-cover object-center"
       loading="lazy"
@@ -23,50 +20,88 @@ interface Props {
   </div>
 
   <!-- Decorative corner accents -->
-  <div class="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-brand-gold/40"></div>
-  <div class="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-brand-gold/40"></div>
-  <div class="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-brand-gold/40"></div>
-  <div class="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-brand-gold/40"></div>
+  <div
+    class="absolute top-8 left-8 w-12 h-12 border-t-2 border-l-2 border-brand-gold/40"
+  >
+  </div>
+  <div
+    class="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-brand-gold/40"
+  >
+  </div>
+  <div
+    class="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-brand-gold/40"
+  >
+  </div>
+  <div
+    class="absolute bottom-8 right-8 w-12 h-12 border-b-2 border-r-2 border-brand-gold/40"
+  >
+  </div>
 
   <!-- Content -->
-  <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-10 py-20 md:py-28">
+  <div
+    class="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-10 py-20 md:py-28"
+  >
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-
       <!-- Left: copy -->
       <div>
-        <p class="text-xs font-bold uppercase tracking-[0.4em] text-brand-lime mb-4">Sin obligación de contratar</p>
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-tight mb-6">
+        <p
+          class="text-xs font-bold uppercase tracking-[0.4em] text-brand-lime mb-4"
+        >
+          Sin obligación de contratar
+        </p>
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-tight mb-6"
+        >
           El primer paso es una conversación.
         </h2>
-        <p class="text-base md:text-lg text-white/55 leading-relaxed mb-8 max-w-md">
-          Antes de recomendarte cualquier cosa, queremos entender dónde estás y qué necesitas. Sin guiones de venta, sin propuestas genéricas.
+        <p
+          class="text-base md:text-lg text-white/55 leading-relaxed mb-8 max-w-md"
+        >
+          Antes de recomendarte cualquier cosa, queremos entender dónde estás y
+          qué necesitas. Sin guiones de venta, sin propuestas genéricas.
         </p>
         <div class="flex flex-col gap-3">
           <div class="flex items-start gap-3">
-            <div class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 flex-shrink-0"></div>
-            <p class="text-white/40 text-sm">Respuesta en menos de 24 horas en días hábiles</p>
+            <div
+              class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 flex-shrink-0"
+            >
+            </div>
+            <p class="text-white/40 text-sm">
+              Respuesta en menos de 24 horas en días hábiles
+            </p>
           </div>
           <div class="flex items-start gap-3">
-            <div class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 flex-shrink-0"></div>
-            <p class="text-white/40 text-sm">Asesoría inicial sin costo ni compromiso</p>
+            <div
+              class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 flex-shrink-0"
+            >
+            </div>
+            <p class="text-white/40 text-sm">
+              Asesoría inicial sin costo ni compromiso
+            </p>
           </div>
           <div class="flex items-start gap-3">
-            <div class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 flex-shrink-0"></div>
-            <p class="text-white/40 text-sm">Atendemos clientes en toda la república y en el extranjero</p>
+            <div
+              class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 flex-shrink-0"
+            >
+            </div>
+            <p class="text-white/40 text-sm">
+              Atendemos clientes en toda la república y en el extranjero
+            </p>
           </div>
         </div>
       </div>
 
       <!-- Right: contact form -->
-      <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-10">
-        <form
-          method="POST"
-          action="#"
-          class="flex flex-col gap-5"
-        >
+      <div
+        class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 md:p-10"
+      >
+        <form method="POST" action="#" class="flex flex-col gap-5">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div class="flex flex-col gap-2">
-              <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Nombre</label>
+              <label
+                class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+                >Nombre</label
+              >
               <input
                 type="text"
                 name="nombre"
@@ -76,7 +111,10 @@ interface Props {
               />
             </div>
             <div class="flex flex-col gap-2">
-              <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Empresa</label>
+              <label
+                class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+                >Empresa</label
+              >
               <input
                 type="text"
                 name="empresa"
@@ -87,50 +125,86 @@ interface Props {
           </div>
 
           <div class="flex flex-col gap-2">
-            <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Presupuesto mensual (MXN)</label>
+            <label
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+              >Presupuesto mensual (MXN)</label
+            >
             <select
               name="presupuesto"
               class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-gold/50 transition-colors duration-200 appearance-none"
             >
-              <option value="" disabled selected class="bg-[#0d1225]">Selecciona un rango</option>
-              <option value="hasta-15k" class="bg-[#0d1225]">Hasta $15,000</option>
-              <option value="15k-30k" class="bg-[#0d1225]">$15,000 – $30,000</option>
-              <option value="30k-50k" class="bg-[#0d1225]">$30,000 – $50,000</option>
-              <option value="mas-50k" class="bg-[#0d1225]">Más de $50,000</option>
+              <option value="" disabled selected class="bg-[#0d1225]"
+                >Selecciona un rango</option
+              >
+              <option value="hasta-15k" class="bg-[#0d1225]"
+                >Hasta $15,000</option
+              >
+              <option value="15k-30k" class="bg-[#0d1225]"
+                >$15,000 – $30,000</option
+              >
+              <option value="30k-50k" class="bg-[#0d1225]"
+                >$30,000 – $50,000</option
+              >
+              <option value="mas-50k" class="bg-[#0d1225]"
+                >Más de $50,000</option
+              >
             </select>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div class="flex flex-col gap-2">
-              <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Urgencia</label>
+              <label
+                class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+                >Urgencia</label
+              >
               <select
                 name="urgencia"
                 class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-gold/50 transition-colors duration-200 appearance-none"
               >
-                <option value="" disabled selected class="bg-[#0d1225]">¿Cuándo arrancan?</option>
-                <option value="asap" class="bg-[#0d1225]">Lo antes posible</option>
-                <option value="1-2-semanas" class="bg-[#0d1225]">En 1–2 semanas</option>
-                <option value="1-mes" class="bg-[#0d1225]">En aproximadamente 1 mes</option>
-                <option value="explorando" class="bg-[#0d1225]">Solo explorando opciones</option>
+                <option value="" disabled selected class="bg-[#0d1225]"
+                  >¿Cuándo arrancan?</option
+                >
+                <option value="asap" class="bg-[#0d1225]"
+                  >Lo antes posible</option
+                >
+                <option value="1-2-semanas" class="bg-[#0d1225]"
+                  >En 1–2 semanas</option
+                >
+                <option value="1-mes" class="bg-[#0d1225]"
+                  >En aproximadamente 1 mes</option
+                >
+                <option value="explorando" class="bg-[#0d1225]"
+                  >Solo explorando opciones</option
+                >
               </select>
             </div>
             <div class="flex flex-col gap-2">
-              <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Canal preferido</label>
+              <label
+                class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+                >Canal preferido</label
+              >
               <select
                 name="canal"
                 class="bg-white/5 border border-white/10 text-white/70 text-sm px-4 py-3 focus:outline-none focus:border-brand-gold/50 transition-colors duration-200 appearance-none"
               >
-                <option value="" disabled selected class="bg-[#0d1225]">¿Cómo te contactamos?</option>
+                <option value="" disabled selected class="bg-[#0d1225]"
+                  >¿Cómo te contactamos?</option
+                >
                 <option value="whatsapp" class="bg-[#0d1225]">WhatsApp</option>
                 <option value="email" class="bg-[#0d1225]">Email</option>
                 <option value="telefono" class="bg-[#0d1225]">Teléfono</option>
-                <option value="videollamada" class="bg-[#0d1225]">Videollamada</option>
+                <option value="videollamada" class="bg-[#0d1225]"
+                  >Videollamada</option
+                >
               </select>
             </div>
           </div>
 
           <div class="flex flex-col gap-2">
-            <label class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40">Cuéntanos más (opcional)</label>
+            <label
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+              >Cuéntanos más (opcional)</label
+            >
             <textarea
               name="mensaje"
               rows="3"
@@ -151,7 +225,10 @@ interface Props {
               stroke="currentColor"
               stroke-width="3"
             >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"></path>
             </svg>
           </button>
 
@@ -160,7 +237,6 @@ interface Props {
           </p>
         </form>
       </div>
-
     </div>
   </div>
 </section>

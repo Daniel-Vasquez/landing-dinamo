@@ -161,11 +161,14 @@ export default function Navigation({ links, socialLinks }: NavigationProps) {
       >
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
-            src="/images/on-track.jpg"
-            alt=""
-            className="w-full h-full object-cover object-[65%] opacity-85 md:object-center"
-          />
+          <picture>
+            <source media="(max-width: 767px)" srcSet="/images/dinamo-mobile.jpeg" />
+            <img
+              src="/images/dinamo.jpeg"
+              alt=""
+              className="w-full h-full object-cover object-[65%] opacity-85 md:object-center"
+            />
+          </picture>
           {/* Gradient to darken the image and make text pop */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/90" />
         </div>
