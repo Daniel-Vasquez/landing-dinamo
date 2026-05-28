@@ -36,6 +36,15 @@ const {
       rel="stylesheet"
     />
     <title>{title}</title>
+    <script is:inline>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light');
+          }
+        } catch (_) {}
+      })();
+    </script>
   </head>
   <body class="bg-brand-dark text-white font-sans antialiased">
     <slot />
@@ -51,22 +60,5 @@ const {
 
   html {
     scroll-behavior: smooth;
-  }
-
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #0d1225;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 3px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
   }
 </style>

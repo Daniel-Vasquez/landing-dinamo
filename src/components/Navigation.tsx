@@ -46,6 +46,26 @@ const IconX = () => (
   </svg>
 );
 
+const IconSun = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="5" />
+    <line x1="12" y1="1" x2="12" y2="3" />
+    <line x1="12" y1="21" x2="12" y2="23" />
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+    <line x1="1" y1="12" x2="3" y2="12" />
+    <line x1="21" y1="12" x2="23" y2="12" />
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+  </svg>
+);
+
+const IconMoon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+);
+
 const socialIconMap: Record<string, React.ReactNode> = {
   Instagram: <IconInstagram />,
   TikTok: <IconTikTok />,
@@ -57,6 +77,7 @@ const socialIconMap: Record<string, React.ReactNode> = {
 export default function Navigation({ links, socialLinks }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isLight, setIsLight] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -65,26 +86,66 @@ export default function Navigation({ links, socialLinks }: NavigationProps) {
   }, []);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    const update = () => setIsLight(document.documentElement.classList.contains('light'));
+    update();
+    const observer = new MutationObserver(update);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
+
+  const toggleTheme = () => {
+    const next = !isLight;
+    if (next) {
+      document.documentElement.classList.add('light');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.remove('light');
+      localStorage.setItem('theme', 'dark');
+    }
+  };
+
+  // When the mobile menu is open, keep nav dark (image overlay behind it)
+  const showDarkNav = !isLight || isOpen || !scrolled;
+
+  const headerBg = scrolled || isOpen
+    ? showDarkNav
+      ? 'bg-[#0d1225]/95 backdrop-blur-md'
+      : 'bg-white/[0.97] backdrop-blur-md shadow-[0_1px_0_rgba(13,18,37,0.08)]'
+    : 'bg-transparent';
+
+  const logoClass = showDarkNav
+    ? 'text-white hover:text-brand-lime'
+    : 'text-[#0d1225] hover:text-brand-lime';
+
+  const linkClass = showDarkNav
+    ? 'text-white/80 hover:text-brand-lime'
+    : 'text-[#0d1225]/80 hover:text-brand-lime';
+
+  const socialClass = showDarkNav
+    ? 'text-white/70 hover:text-brand-lime'
+    : 'text-[#0d1225]/70 hover:text-brand-lime';
+
+  const toggleClass = showDarkNav
+    ? 'text-white/60 hover:text-white'
+    : 'text-[#0d1225]/60 hover:text-[#0d1225]';
+
+  const hamburgerLine = showDarkNav ? 'bg-white' : 'bg-[#0d1225]';
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled || isOpen ? 'bg-[#0d1225]/95 backdrop-blur-md' : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}
       >
         <nav className="max-w-[1400px] mx-auto px-6 lg:px-10 h-16 md:h-20 flex items-center justify-between">
           {/* Logo */}
           <a
             href="/"
-            className="flex items-center gap-2 text-white hover:text-brand-lime transition-colors duration-200"
+            className={`flex items-center gap-2 transition-colors duration-200 ${logoClass}`}
             aria-label="dínamo Home"
           >
             <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-lime rounded-sm flex items-center justify-center">
@@ -103,7 +164,7 @@ export default function Navigation({ links, socialLinks }: NavigationProps) {
                   href={link.href}
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noopener noreferrer' : undefined}
-                  className="text-sm font-semibold uppercase tracking-widest text-white/80 hover:text-brand-lime transition-colors duration-200"
+                  className={`text-sm font-semibold uppercase tracking-widest transition-colors duration-200 ${linkClass}`}
                 >
                   {link.label}
                 </a>
@@ -111,49 +172,61 @@ export default function Navigation({ links, socialLinks }: NavigationProps) {
             ))}
           </ul>
 
-          {/* Desktop Social Icons */}
-          <div className="hidden lg:flex items-center gap-5">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.name}
-                className="text-white/70 hover:text-brand-lime transition-colors duration-200"
-              >
-                {socialIconMap[social.name] ?? social.name}
-              </a>
-            ))}
-          </div>
+          {/* Right side: Social + Theme Toggle + Hamburger */}
+          <div className="flex items-center gap-2">
+            {/* Desktop Social Icons */}
+            <div className="hidden lg:flex items-center gap-5 mr-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  className={`transition-colors duration-200 ${socialClass}`}
+                >
+                  {socialIconMap[social.name] ?? social.name}
+                </a>
+              ))}
+            </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] group"
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isOpen}
-          >
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${
-                isOpen ? 'rotate-45 translate-y-[7px]' : ''
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                isOpen ? 'opacity-0 scale-x-0' : ''
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 origin-center ${
-                isOpen ? '-rotate-45 -translate-y-[7px]' : ''
-              }`}
-            />
-          </button>
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label={isLight ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro'}
+              className={`flex items-center justify-center w-9 h-9 transition-colors duration-200 rounded-sm ${toggleClass}`}
+            >
+              {isLight ? <IconMoon /> : <IconSun />}
+            </button>
+
+            {/* Mobile Hamburger */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] group"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
+            >
+              <span
+                className={`block w-6 h-0.5 transition-all duration-300 origin-center ${hamburgerLine} ${
+                  isOpen ? 'rotate-45 translate-y-[7px]' : ''
+                }`}
+              />
+              <span
+                className={`block w-6 h-0.5 transition-all duration-300 ${hamburgerLine} ${
+                  isOpen ? 'opacity-0 scale-x-0' : ''
+                }`}
+              />
+              <span
+                className={`block w-6 h-0.5 transition-all duration-300 origin-center ${hamburgerLine} ${
+                  isOpen ? '-rotate-45 -translate-y-[7px]' : ''
+                }`}
+              />
+            </button>
+          </div>
         </nav>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay — always dark (image-based background) */}
       <div
         className={`fixed inset-0 z-40 bg-[#0d1225] flex flex-col transition-all duration-500 lg:hidden ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -169,7 +242,6 @@ export default function Navigation({ links, socialLinks }: NavigationProps) {
               className="w-full h-full object-cover object-[65%] opacity-85 md:object-center"
             />
           </picture>
-          {/* Gradient to darken the image and make text pop */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/90" />
         </div>
 
@@ -179,9 +251,7 @@ export default function Navigation({ links, socialLinks }: NavigationProps) {
               <li
                 key={link.label}
                 className="overflow-hidden"
-                style={{
-                  transitionDelay: isOpen ? `${i * 60}ms` : '0ms',
-                }}
+                style={{ transitionDelay: isOpen ? `${i * 60}ms` : '0ms' }}
               >
                 <a
                   href={link.href}
